@@ -1,7 +1,9 @@
 package com.zyll.dao;
 
 import com.zyll.entity.UserEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 

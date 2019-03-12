@@ -15,11 +15,11 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("/showUser")
+    @RequestMapping("/showUser/{id}")
     @ResponseBody
     public UserEntity toIndex(HttpServletRequest request, UserEntity userEntity){
          try{
-             int userId = Integer.parseInt(request.getParameter("id"));
+             int userId = Integer.parseInt(userEntity.getId());
              userEntity = this.userService.getUserById(userId);
          }catch (Exception e){
              e.printStackTrace();
